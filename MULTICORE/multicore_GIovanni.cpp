@@ -16,13 +16,17 @@ int main(){
     in>>T;
     for(int t=1;t<=T;t++){
         in>>N>>B;
-        
+        // Questo problema è un semplicissimo knapsack: si risolve con la dynamic programming
+        // per spiegazioni cerca su internet, ci sono in giro guide fatte molto bene, soprattutto in inglese
+
         for(int i = MAXC-1;i>=0;i--)C[i] = -1;
         C[0] = 0;
 
         for(int j = 0;j < N;j++){
             int Nc,P;
             in>>Nc>>P;
+            
+            // in questo caso l'elaborazione la faccio contemporaneamente all'input
             for(int i = MAXC-1;i>=0;i--){
                 if(C[i] != -1){
                     if(C[i+Nc]!=-1)
